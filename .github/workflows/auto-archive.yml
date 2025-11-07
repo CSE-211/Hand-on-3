@@ -2,8 +2,8 @@ name: 🔒 Auto Archive Repository After Deadline
 
 on:
   schedule:
-    - cron: "*/5 * * * *"    
-  workflow_dispatch:          
+    - cron: "*/5 * * * *"    # يتحقق كل 5 دقائق
+  workflow_dispatch:          # لتشغيله يدويًا
 
 jobs:
   archive-repo:
@@ -17,7 +17,7 @@ jobs:
       - name: 🔍 Compare with deadline
         id: check_deadline
         run: |
-          DEADLINE="2025-11-02T12:50:00Z"
+          DEADLINE="2025-11-08T20:00:00Z"   # ⏰ يساوي 10:00 PM بتوقيت مصر
           NOW=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
 
           echo "🕓 Current UTC time: $NOW"
